@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html lang="en-US">
+    <meta name="description" content="Hi i am ashwanierp and my  handle is ashwanierp if i remove erp that is my tag then i became ashwani singh and you also say ashwani singh Erp but my first name is ashwani and last name is Singh and tag is Erp and my home name is Jhabboo,ashwani singh erp executive goodluck industries,Goodluck India Limited,Good Luck Industries,Goodluck Group,ashwanierp,AshwaniErp,">
+    <meta name="keywords" content="ashwanierp,erp,navision,microsoft navision,microsoft Dynamic Navision,microsoft Dynamic Nav,Dynamic Nav,Dynamic Navision,ashwani,Business central,bc,Microsoft bc,Microsoft Business central,ashwanisingherp ashwani singh erp,ashwani erp,ashwani,singh">
+  <meta name="author" content="Ashwani Singh">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="4; url='http://192.168.1.44:8080/BC220/'" />
+    <title>Ashwani Singh</title>
+<style type="text/css"> 
+        .loader { 
+            border: 16px solid #f3f3f3; 
+            /* Light grey */ 
+            border-top: 16px solid #36bfbd; 
+            /* Dark Green */ 
+            border-radius: 50%; 
+            width: 120px; 
+            height: 120px; 
+            animation: spinloader 2s linear infinite; 
+        } 
+  
+
+
+
+        .loader img { 
+            height: 120px; 
+            width: 120px; 
+            animation: spinlogo 2s linear infinite; 
+        } 
+
+
+        @keyframes spinloader { 
+            0% { 
+                transform: rotate(0deg); 
+            } 
+  
+            100% { 
+                transform: rotate(360deg); 
+            } 
+        } 
+  
+        @keyframes spinlogo { 
+            0% { 
+                transform: rotate(360deg); 
+            } 
+  
+            100% { 
+                transform: rotate(0deg); 
+            } 
+        } 
+    </style> 
+
+</head>
+<body>
+<center>
+	
+
+
+<div id="myDiv" class="loader"><img src="https://www.waldo.be/wp-content/uploads/2021/11/business-central-logo.png" /></div> <!------>
+</center>
+<script>
+document.getElementById("myDiv").style.marginTop = "200px";
+</script>
+  </body>
+</html>
