@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ticket Manager (Google Sheet)</title>
+  <style>
+    body { font-family: Arial; margin: 2rem; }
+    label { font-weight: bold; margin-top: 1rem; display: block; }
+    textarea, input, select { width: 100%; padding: 0.5rem; margin-top: 0.3rem; }
+    button { margin-top: 1rem; padding: 0.7rem 1.5rem; font-size: 1rem; }
+  </style>
+</head>
+<body>
+  <h2>Create Ticket</h2>
+
+  <form id="ticketForm">
+    <label>Description</label>
+    <textarea id="description" required></textarea>
+
+    <label>User</label>
+    <input type="text" id="user" required />
+
+    <label>Email</label>
+    <input type="email" id="email" required />
+
+    <label>Status</label>
+    <select id="status">
+      <option>Open</option>
+      <option>In Progress</option>
+      <option>Closed</option>
+    </select>
+
+    <label>Start Date</label>
+    <input type="date" id="startDate" />
+
+    <label>Close Date</label>
+    <input type="date" id="closeDate" />
+
+    <label>Blocker</label>
+    <textarea id="blocker"></textarea>
+
+    <label>Action Taken</label>
+    <textarea id="actionTaken"></textarea>
+
+    <button type="submit">Submit to Google Sheet</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwaPHJswglDnPo7CnnIn4Wten4QL8G_6HE9vuLx52vvM6m0TBQCOTq0FU11YNUFDbfXyA/exec
+";
+
+    document.getElementById("ticketForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const data = {
+        description: document.getElementById("description").value,
+        user: document.getElementById("user").value,
+        email: document.getElementById("email").value,
+        status: document.getElementById("status").value,
+        startDate: document.getElementById("startDate").value,
+        closeDate: document.getElementById("closeDate").value,
+        blocker: document.getElementById("blocker").value,
+        actionTaken: document.getElementById("actionTaken").value
+      };
+
+      fetch(scriptURL, {
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(result => {
+        document.getElementById("message").textContent = "✅ Ticket submitted successfully!";
+        document.getElementById("ticketForm").reset();
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        document.getElementById("message").textContent = "❌ Submission failed.";
+      });
+    });
+  </script>
+</body>
+</html>
